@@ -1,4 +1,4 @@
-package com.kevin.rxdemo;
+package com.kevin.rxdemo.basic;
 
 import rx.Observable;
 import rx.Subscriber;
@@ -13,13 +13,12 @@ public class RxDemo1 {
 
     /**
      * 最简单的rx例子
-     * @param args
      */
     public static void main(String[] args) {
         Observable<String> observable1 = Observable.create(
             new Observable.OnSubscribe<String>() {
                 public void call(Subscriber<? super String> subscriber) {
-                    subscriber.onNext("123131");
+                    subscriber.onNext("Hello, RxDemo2");
                     subscriber.onCompleted();
                 }
             }
@@ -35,7 +34,7 @@ public class RxDemo1 {
             }
 
             public void onNext(String s) {
-                System.out.println("____" + s);
+                System.out.println(s);
             }
         };
 
